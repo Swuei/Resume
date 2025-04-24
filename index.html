@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DN9PTRHS4G"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DN9PTRHS4G');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Swuei | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #0f0f0f;
+      color: #fff;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background: #111;
+      padding: 1.2rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    header h1 { color: #00ffd5; font-size: 1.5rem; }
+    nav ul { list-style: none; display: flex; gap: 1.2rem; }
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      position: relative;
+    }
+    nav ul li a:hover { color: #00ffd5; }
+    nav ul li a::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background: #00ffd5;
+      transition: width 0.3s;
+    }
+    nav ul li a:hover::after { width: 100%; }
+
+    section {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .hero {
+      text-align: center;
+      padding-top: 5rem;
+      background: linear-gradient(to bottom, #1a1a1a, #0f0f0f);
+    }
+    .hero h2 { font-size: 3rem; margin-bottom: 1rem; }
+    .hero p { font-size: 1.25rem; color: #ccc; margin-bottom: 2rem; }
+
+    .btn {
+      background: #00ffd5;
+      color: #000;
+      padding: 0.9rem 1.7rem;
+      font-weight: bold;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .btn:hover {
+      background: #00c2a4;
+      transform: scale(1.05);
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .grid {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .card {
+      background: #1a1a1a;
+      padding: 1.5rem;
+      border-radius: 10px;
+      text-align: center;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(0,255,213,0.1);
+      transition: transform 0.3s;
+    }
+    .card:hover { transform: scale(1.03); }
+
+    .portfolio-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin: 0.5rem 0;
+      border-radius: 6px;
+      border: none;
+      font-size: 1rem;
+    }
+
+    .contact-form button {
+      width: 100%;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #111;
+      color: #aaa;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background: #1a1a1a;
+      padding: 2rem;
+      border-radius: 10px;
+      max-width: 600px;
+      text-align: center;
+      position: relative;
+    }
+
+    .modal-content img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: #fff;
+    }
+
+    @media (max-width: 600px) {
+      .hero h2 { font-size: 2rem; }
+    }
+<link href="https://fonts.cdnfonts.com/css/dogica" rel="stylesheet">
+
+<style>
+  .hero {
+    background: linear-gradient(135deg, #1e1e2f, #2c2c3e);
+    color: white;
+    padding: 100px 20px;
+    font-family: 'dogica', sans-serif;
+    position: relative;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    text-align: left;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .hero-text {
+    max-width: 500px;
+    text-align: left;
+  }
+
+  .hero-text h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    line-height: 1.6;
+  }
+
+  .btn {
+    background-color: #4d79ff;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 0.9rem;
+    font-family: 'dogica', sans-serif;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 5px 10px 0 0;
+  }
+
+  .btn:hover {
+    background-color: #355de6;
+    transform: scale(1.05);
+  }
+
+  .hero-logo {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #4d79ff;
+    transition: transform 0.4s ease;
+  }
+
+  .hero-logo:hover {
+    transform: scale(1.1) rotate(5deg);
+  }
+
+  .scroll-down {
+    font-size: 2rem;
+    color: white;
+    margin-top: 50px;
+    cursor: pointer;
+    animation: bounce 1.5s infinite;
+  }
+
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-content {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .hero-text {
+      text-align: center;
+    }
+  }
+</style>
+
+<header></header>
+
+<section id="hero" class="hero" data-aos="fade-up">
+  <div class="hero-content">
+
+    <img src="https://i.ibb.co/MDhCjGRL/eye-block.png" alt="Swuei Logo" class="hero-logo" />
+
+    <div class="hero-text">
+      <h2>Hi I'm, Swuei!</h2>
+      <p>Free Professional Minecraft Server Staffing & 3D Modeling</p>
+
+      <a href="#portfolio">
+        <button class="btn">3D Modeling Work (Click!)</button>
+      </a>
+
+      <a href="https://bit.ly/4aVz5gF" target="_blank">
+        <button class="btn">Staffing Resume (Click!)</button>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="scroll-down" onclick="window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'});">
+    &#8595;
+  </div>
+</section>
+
+
+
+<section id="about" data-aos="fade-right">
+<section id="about" data-aos="fade-up">
+  <h2 class="section-title" data-aos="fade-right">About Me</h2>
+
+<link href="https://fonts.cdnfonts.com/css/dogica" rel="stylesheet">
+
+<div style="max-width: 800px; margin: 0 auto; text-align: center; font-family: 'dogica', sans-serif; line-height: 1.8;">
+
+  <p class="text-center" data-aos="fade-up" data-aos-delay="100" style="margin-bottom: 30px;">
+    Hey! I'm Swuei and I’ve been playing Minecraft inconsistently for around 11 years now. I am an experienced staff member with a wide variety of gamemode experience, having achieved ranks ranging from Helper to Admin over a span of 4 years.
+  </p>
+
+  <p class="text-center" data-aos="fade-up" data-aos-delay="300" style="margin-bottom: 30px;">
+    I have been staffing on Minecraft servers for 3 to 4 years and have achieved many great things that have greatly benefited the servers I’ve had the privilege to be part of. My vision when staffing is to cultivate an enjoyable, fun environment for both players and staff—leaving a lasting positive impression.
+  </p>
+
+  <p class="text-center" data-aos="fade-up" data-aos-delay="400" style="margin-bottom: 30px;">
+    Some notable aspects about me include my undying dedication to every project I’m part of, the ability to maneuver through obstacles, and swift decision-making to streamline support tickets. I have years of experience moderating and leading teams. I aim to master everything there is to know about Minecraft server staffing so I can be a reliable asset and adapt to any new challenges.
+  </p>
+
+  <p class="text-center" data-aos="fade-up" data-aos-delay="200" style="margin-bottom: 30px;">
+    3D Modeling is a hobby that I got into and I have been doing it for a while now (not too long), I enjoy doing it since it's calming and I'm able to help server owners by giving them free models that they do not need to pay for so that they can instead use those funds on more important features for their server.
+  </p>
+</div>
+
+
+<div style="display: flex; justify-content: center; margin-bottom: 30px;" data-aos="fade-up" data-aos-delay="500">
+  <a href="https://discord.com/users/817968354979610624" target="_blank">
+    <img src="https://img.shields.io/badge/Discord-Swuei-%5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord">
+  </a>
+</div>
+
+</section>
+
+
+<section id="skills" data-aos="fade-left">
+  <h2 class="section-title">Skills</h2>
+  <div class="grid">
+    <div class="card">Multiplatform Moderation</div>
+    <div class="card">3D Modeling (Blockbench)</div>
+    <div class="card">Minecraft Staffing</div>
+    <div class="card">Staff Management & Document Creation</div>
+    <div class="card">Leadership Skills</div>
+    <div class="card">Staff Mentoring</div>
+  </div>
+</section>
+
+<section id="services" data-aos="fade-up">
+  <h2 class="section-title">Services</h2>
+  <div class="grid">
+    <div class="card">3D Modeling</div>
+    <div class="card">Staff Management</div>
+    <div class="card">Minecraft Server Moderation</div>
+    <div class="card">Discord Creation & Setup</div>
+    <div class="card">Community Management</div>
+    <div class="card">Multiplatform Moderation</div>
+  </div>
+</section>
+
+<section id="portfolio" class="portfolio-section">
+  <h2 data-aos="fade-up">Featured 3D Models</h2>
+  <p class="subtitle" data-aos="fade-up" data-aos-delay="100">
+    Note: All Models made are free and non-exlusive, this means that you are not permitted to sell, redistribute, or claim ownership over them.
+  </p>
+
+  <div class="portfolio-grid">
+    <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="200">
+      <iframe title="Miner NPC (16x)" src="https://sketchfab.com/models/6ac60d844ed648f3a0c51c36c99d3414/embed?ui_infos=0&ui_controls=0&ui_watermark=0&autospin=1&autostart=1" loading="lazy"></iframe>
+      <h3>Miner NPC (16x)</h3>
+      <p>Perfect for village or mining-themed settings.</p>
+    </div>
+
+    <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="300">
+      <iframe title="Dungeon Door (32x)" src="https://sketchfab.com/models/cc121d18e1954fd8adf45332f74461ac/embed?ui_infos=0&ui_controls=0&ui_watermark=0&autospin=1&autostart=1" loading="lazy"></iframe>
+      <h3>Dungeon Door (32x)</h3>
+      <p>A high-resolution dungeon door with fantasy elements.</p>
+    </div>
+
+    <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="400">
+      <iframe title="Dumpling Stand (16x Resolution)" src="https://sketchfab.com/models/c045c38aec624ec0a74d4ba4a1f4b6e3/embed?ui_infos=0&ui_controls=0&ui_watermark=0&autospin=1&autostart=1&preload=1" loading="lazy"></iframe>
+      <h3>Dumpling Stand (16x)</h3>
+      <p>Add lively culture to your builds with this charming food stand.</p>
+    </div>
+
+    <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="500">
+      <iframe title="Windmill" src="https://sketchfab.com/models/e408b66d78b34660ab48f5a3e8bfda66/embed?ui_infos=0&ui_controls=0&ui_watermark=0&autospin=1&autostart=1&preload=1" loading="lazy"></iframe>
+      <h3>Windmill (16x)</h3>
+      <p>Rustic and detailed – a perfect centerpiece for any medieval or countryside world.</p>
+    </div>
+
+    <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="600">
+      <iframe title="FREE Crate Variety Pack (32x)" 
+        src="https://sketchfab.com/models/fabae8c8beec464c823d73da8e66f691/embed?autospin=1&autostart=1&preload=1&ui_infos=0&ui_controls=0&ui_watermark=0"
+        frameborder="0" allowfullscreen loading="lazy">
+      </iframe>
+      <h3>FREE Crate Variety Pack (32x)</h3>
+      <p>Rustic and detailed – a perfect centerpiece for any medieval or countryside world.</p>
+    </div>
+
+    <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="700">
+      <iframe title="Market Stall (32x)" 
+        src="https://sketchfab.com/models/720216662a1043588e1eca7004539f6f/embed?autospin=1&autostart=1&preload=1&ui_infos=0&ui_controls=0&ui_watermark=0" 
+        loading="lazy" frameborder="0" allowfullscreen>
+      </iframe>
+      <h3>Market Stall (32x)</h3>
+      <p>A compact, detailed stand for medieval or village markets.</p>
+    </div>
+  </div>
+</section>
+</section>
+
+<style>
+  .portfolio-section {
+    padding: 4rem 2rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+  }
+
+  .portfolio-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #ccc;
+  }
+
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+  }
+
+  .portfolio-item {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 1rem;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    max-width: 500px;
+  }
+
+  .portfolio-item:hover {
+    transform: scale(1.03);
+  }
+
+  .portfolio-item iframe {
+    width: 100%;
+    height: 300px;
+    border: none;
+    border-radius: 10px;
+  }
+
+  .portfolio-item h3 {
+    margin-top: 1rem;
+    font-size: 1.25rem;
+    color: #fff;
+  }
+
+  .portfolio-item p {
+    color: #bbb;
+    font-size: 1rem;
+  }
+</style>
+
+  </div>
+</section>
+
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <span class="close-btn" id="closeModal">&times;</span>
+    <h3 id="modalTitle"></h3>
+    <img id="modalImage" src="" alt="Preview" />
+  </div>
+</div>
+
+<section id="contact" class="contact-form" data-aos="fade-up">
+  <h2 class="section-title">Contact Me</h2>
+  <form action="https://formsubmit.co/4c8a5368af19f1743ea030512758dc17" method="POST">
+    <input type="text" name="name" placeholder="Your Discord ex.Swuei" required/>
+    <input type="email" name="email" placeholder="Your Email ex.Swuei@whatever.com" required/>
+    <textarea name="message" rows="5" placeholder="Your Message eg. Explain in detail!" required></textarea>
+    <button class="btn" type="submit">Send Message</button>
+
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="box">
+  </form>
+</section>
+
+<footer>
+  &copy; 2025 Swuei. All rights reserved.
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+
+  const modal = document.getElementById('modal');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalImage = document.getElementById('modalImage');
+  const closeModal = document.getElementById('closeModal');
+
+  document.querySelectorAll('.portfolio-item').forEach(item => {
+    item.addEventListener('click', () => {
+      modalTitle.textContent = item.dataset.title;
+      modalImage.src = item.dataset.img;
+      modal.style.display = 'flex';
+    });
+  });
+
+  closeModal.onclick = () => {
+    modal.style.display = 'none';
+  };
+
+  window.onclick = (e) => {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+    }
+  };
+</script>
+</body>
+</html>
